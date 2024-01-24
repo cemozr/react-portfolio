@@ -1,9 +1,7 @@
-html {
-  height: 100%;
-  margin: 0;
-  box-sizing: border-box;
+.flex-wrapper {
   background-color: #dde6ed;
-}
-#root {
-  background-color: #dde6ed;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }

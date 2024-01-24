@@ -3,11 +3,26 @@ import { Container, Avatar, Box, Chip, Stack } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import Paper from "@mui/material/Paper";
 
+const skills = [
+  "TypeScript",
+  "React.js",
+  "Material UI",
+  "Three.js",
+  "WebXR",
+  "JavaScript",
+  "Scss",
+  "Bootstrap",
+  "Css",
+  "Html",
+  "SQL",
+  "Axios",
+];
+
 export const Bio = () => {
   return (
     <>
       <CssBaseline />
-      <Container sx={{ mt: "1rem", backgroundColor: "#dde6ed" }}>
+      <Container sx={{ mb: "10rem", backgroundColor: "#dde6ed" }}>
         <Typography
           variant="h5"
           sx={{
@@ -25,6 +40,7 @@ export const Bio = () => {
             mt: "2rem",
             p: "2rem",
             backgroundColor: "primary.main",
+            boxShadow: "0px 0px 5px 1px #033171",
           }}
           elevation={5}
         >
@@ -57,24 +73,30 @@ export const Bio = () => {
             spacing={3}
             display={"flex"}
             flexWrap={"wrap"}
-            sx={{ mt: "1rem" }}
+            alignItems={"center"}
+            sx={{ mt: "1rem", height: "6rem" }}
           >
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
-            <Chip label="Chip Outlined" variant="filled" />
+            {skills.map((s, i) => {
+              return (
+                <Chip
+                  key={i}
+                  label={s}
+                  variant="filled"
+                  sx={{
+                    width: "10rem",
+                    p: "1rem",
+                    boxShadow: "0px 0px 5px 1px #033171",
+                    "&:hover": {
+                      boxShadow: "0px 0px 10px 1px #033171",
+                    },
+                  }}
+                />
+              );
+            })}
           </Stack>
         </Box>
       </Container>
     </>
   );
 };
+// box-shadow: 0px 0px 39px 3px rgba(0,0,0,0.1);

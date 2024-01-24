@@ -4,6 +4,7 @@ import { Header } from "./components/header/Header";
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import { Bio } from "./components/bio/Bio";
+import { Footer } from "./components/footer/Footer";
 
 export const theme = createTheme({
   palette: {
@@ -28,8 +29,11 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Header />
-        <Bio />
+        <div className="flex-wrapper">
+          <Header />
+          <Bio />
+          <Footer />
+        </div>
       </ThemeProvider>
     </>
   );
