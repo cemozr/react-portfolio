@@ -38,6 +38,7 @@ export const Footer = () => {
           color={"secondary.dark"}
           bgcolor={"primary.main"}
           textAlign={"end"}
+          fontSize={"small"}
         >
           *React, Material UI ve <FavoriteIcon fontSize="smaller" /> ile
           geliştirildi.

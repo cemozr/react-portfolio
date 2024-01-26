@@ -9,6 +9,8 @@ import { CssBaseline } from "@mui/material";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import { Margin } from "@mui/icons-material";
+import { Link, Router } from "react-router-dom";
+import { router } from "../../routes";
 export const Header = () => {
   return (
     <>
@@ -25,9 +27,41 @@ export const Header = () => {
               DevCem
             </Typography>
 
-            <Button sx={{ color: "secondary.main" }}>Hakkımda</Button>
-            <Button sx={{ color: "secondary.main" }}>İletişim</Button>
-            <Button sx={{ color: "secondary.main" }}>Çalışmalarım</Button>
+            <Button
+              sx={{
+                color: "secondary.main",
+                display: { xs: "none", sm: "block" },
+              }}
+            >
+              Hakkımda
+            </Button>
+
+            <Button
+              sx={{
+                color: "secondary.main",
+                display: { xs: "none", sm: "block" },
+              }}
+            >
+              Çalışmalarım
+            </Button>
+
+            <Button
+              sx={{
+                color: "secondary.main",
+                display: { xs: "none", sm: "block" },
+              }}
+            >
+              İletişim
+            </Button>
+            <IconButton
+              size="large"
+              edge="end"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mt: "0.4rem", display: { xs: "block", sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
           </Toolbar>
         </AppBar>
       </Box>
