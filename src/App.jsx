@@ -11,9 +11,7 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <div className="flex-wrapper">
-          <Header />
           <RouterProvider router={router} />
-          <Footer />
         </div>
       </ThemeProvider>
     </>

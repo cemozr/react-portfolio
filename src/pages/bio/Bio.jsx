@@ -2,7 +2,8 @@ import Typography from "@mui/material/Typography";
 import { Container, Avatar, Box, Chip, Stack } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import Paper from "@mui/material/Paper";
-
+import { Header } from "../../components/header/Header";
+import { Footer } from "../../components/footer/Footer";
 const skills = [
   "TypeScript",
   "React.js",
@@ -22,6 +23,7 @@ export const Bio = () => {
   return (
     <>
       <CssBaseline />
+      <Header />
       <Container sx={{ mb: "10rem", backgroundColor: "#dde6ed" }}>
         <Typography
           variant="h5"
@@ -96,6 +98,7 @@ export const Bio = () => {
           </Stack>
         </Box>
       </Container>
+      <Footer />
     </>
   );
 };
