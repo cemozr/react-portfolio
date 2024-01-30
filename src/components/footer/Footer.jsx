@@ -37,10 +37,10 @@ export const Footer = () => {
         <Typography
           color={"secondary.dark"}
           bgcolor={"primary.main"}
-          textAlign={"end"}
           fontSize={"small"}
+          sx={{ textAlign: { xs: "center", sm: "end" } }}
         >
-          *React, Material UI ve <FavoriteIcon fontSize="smaller" /> ile
+          React, Material UI ve <FavoriteIcon fontSize="smaller" /> ile
           geliştirildi.
         </Typography>
       </Box>

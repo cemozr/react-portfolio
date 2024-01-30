@@ -38,7 +38,7 @@ export const Bio = () => {
         </Typography>
         <Paper
           sx={{
-            display: "flex",
+            display: { xs: "block", sm: "flex" },
             mt: "2rem",
             p: "2rem",
             backgroundColor: "primary.main",
@@ -46,7 +46,26 @@ export const Bio = () => {
           }}
           elevation={5}
         >
-          <Box sx={{ display: "flex", alignItems: "center", mr: "2rem" }}>
+          <Box
+            sx={{
+              display: "flex",
+              mr: { xs: "0", sm: "2rem" },
+              mb: { xs: "1rem" },
+              justifyContent: "center",
+            }}
+          >
+            <Avatar
+              alt="asdasd"
+              src="../../assets/asd.jpg"
+              sx={{ width: "10rem", height: "10rem" }}
+            />
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <Typography sx={{ color: "secondary.main" }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
               dicta a! Perspiciatis aperiam repellendus at id debitis quasi
@@ -58,13 +77,6 @@ export const Bio = () => {
               quas.
             </Typography>
           </Box>
-          <Box>
-            <Avatar
-              alt="asdasd"
-              src="../../assets/asd.jpg"
-              sx={{ width: "10rem", height: "10rem" }}
-            />
-          </Box>
         </Paper>
         <Box>
           <Typography variant="h5" sx={{ mt: "2rem" }}>
@@ -72,10 +84,10 @@ export const Bio = () => {
           </Typography>
           <Stack
             direction={"row"}
-            spacing={3}
             display={"flex"}
             flexWrap={"wrap"}
             alignItems={"center"}
+            justifyContent={"center"}
             sx={{ mt: "1rem", height: "6rem" }}
           >
             {skills.map((s, i) => {
@@ -85,9 +97,10 @@ export const Bio = () => {
                   label={s}
                   variant="filled"
                   sx={{
-                    width: "10rem",
+                    width: "8rem",
                     p: "1rem",
                     boxShadow: "0px 0px 5px 1px #033171",
+                    mr: "1rem",
                     "&:hover": {
                       boxShadow: "0px 0px 10px 1px #033171",
                     },
