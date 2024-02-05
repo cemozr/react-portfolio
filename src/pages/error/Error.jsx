@@ -27,7 +27,7 @@ export const Error = () => {
         </Box>
         <Box mt={3}>
           <Button
-            onClick={() => navigate("/bio")}
+            onClick={() => navigate("/")}
             sx={{
               color: "secondary.main",
               backgroundColor: "primary.main",

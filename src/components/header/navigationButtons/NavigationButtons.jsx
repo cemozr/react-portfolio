@@ -1,20 +1,20 @@
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+export const navButtons = [
+  {
+    name: "Hakkımda",
+    path: "/",
+  },
+  {
+    name: "Çalışmalarım",
+    path: "/projects",
+  },
+  {
+    name: "İletişim",
+    path: "/contact",
+  },
+];
 export const NavigationButtons = () => {
-  const navButtons = [
-    {
-      name: "Hakkımda",
-      path: "/bio",
-    },
-    {
-      name: "Çalışmalarım",
-      path: "/projects",
-    },
-    {
-      name: "İletişim",
-      path: "/contact",
-    },
-  ];
   return (
     <>
       {navButtons.map((btn, i) => {

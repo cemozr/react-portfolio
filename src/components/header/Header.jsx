@@ -10,7 +10,10 @@ import { ThemeProvider } from "@mui/material";
 import { theme } from "../../themes/theme";
 import "./header.css";
 import { useState } from "react";
-import { NavigationButtons } from "./navigationButtons/NavigationButtons";
+import {
+  NavigationButtons,
+  navButtons,
+} from "./navigationButtons/NavigationButtons";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
@@ -64,15 +67,13 @@ export const Header = () => {
                     horizontal: "right",
                   }}
                 >
-                  <Link className="nav-link" to="/bio">
-                    <MenuItem>Hakkımda</MenuItem>
-                  </Link>
-                  <Link className="nav-link" to="/projects">
-                    <MenuItem>Çalışmalarım</MenuItem>
-                  </Link>
-                  <Link className="nav-link" to="/contact">
-                    <MenuItem>İletişim</MenuItem>
-                  </Link>
+                  {navButtons.map((navButton, i) => {
+                    return (
+                      <Link key={i} className="nav-link" to={navButton.path}>
+                        <MenuItem>{navButton.name}</MenuItem>
+                      </Link>
+                    );
+                  })}
                 </Menu>
               </div>
             </Toolbar>

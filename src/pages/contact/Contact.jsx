@@ -5,7 +5,9 @@ export const Contact = () => {
   return (
     <div>
       <Header />
-      <div>contact</div>
+      <div>
+        <h1>contact</h1>
+      </div>
       <Footer />
     </div>
   );

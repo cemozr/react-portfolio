@@ -23,7 +23,6 @@ export const Bio = () => {
   return (
     <>
       <CssBaseline />
-      <Header />
       <Container sx={{ mb: "10rem", backgroundColor: "#dde6ed" }}>
         <Typography
           variant="h5"
@@ -111,7 +110,6 @@ export const Bio = () => {
           </Stack>
         </Box>
       </Container>
-      <Footer />
     </>
   );
 };

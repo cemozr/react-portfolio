@@ -4,14 +4,23 @@ import { ThemeProvider } from "@mui/material";
 import { Bio } from "./pages/bio/Bio";
 import { Footer } from "./components/footer/Footer";
 import { theme } from "./themes/theme";
-import { router } from "./routes";
-import { RouterProvider } from "react-router";
+import { Routes, Route } from "react-router";
+import { Error } from "./pages/error/Error";
+import { Contact } from "./pages/contact/Contact";
+import { Projects } from "./pages/projects/Projects";
 function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
         <div className="flex-wrapper">
-          <RouterProvider router={router} />
+          <Header />
+          <Routes>
+            <Route index path="/" element={<Bio />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+          <Footer />
         </div>
       </ThemeProvider>
     </>

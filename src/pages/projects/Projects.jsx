@@ -5,7 +5,7 @@ export const Projects = () => {
   return (
     <div>
       <Header />
-      projects
+      <h1>projects</h1>
       <Footer />
     </div>
   );
