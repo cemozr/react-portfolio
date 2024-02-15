@@ -16,7 +16,35 @@ export const theme = createTheme({
         },
       },
     },
-
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: "#DDE6ED",
+        },
+      },
+    },
+    MuiCardContent: {
+      styleOverrides: {
+        root: {
+          backgroundColor: " #3C4B5E",
+          color: "#DDE6ED",
+        },
+      },
+    },
+    MuiCardActions: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#27374D",
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          color: "#DDE6ED",
+        },
+      },
+    },
     MuiList: {
       styleOverrides: {
         root: {
