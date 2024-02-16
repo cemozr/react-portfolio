@@ -33,7 +33,7 @@ export const Bio = () => {
             color: "primary.main",
           }}
         >
-          MERHABA! BEN BİR FRONT END GELİŞTİRİCİYİM.
+          MERHABA! BEN BİR FRONTEND GELİŞTİRİCİYİM.
         </Typography>
         <Paper
           sx={{
@@ -55,7 +55,7 @@ export const Bio = () => {
           >
             <Avatar
               alt="asdasd"
-              src="../../assets/asd.jpg"
+              src="../../../asdasd.jpg"
               sx={{ width: "10rem", height: "10rem" }}
             />
           </Box>

@@ -9,12 +9,13 @@ import {
   Avatar,
   Typography,
   Box,
+  CircularProgress,
 } from "@mui/material";
 
 export const Activity = () => {
   const [activities, setActivities] = useState([]);
-  const commitAmount = 7;
-  const token = "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";
+  const commitAmount = 13;
+  const token = "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";
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
@@ -53,7 +54,7 @@ export const Activity = () => {
       setActivities(sortedActivities);
       console.log(activities);
     } catch (error) {
-      console.error("bilgi alınamadı", error);
+      console.error("veri alınamadı", error);
     }
   };
 
@@ -63,54 +64,59 @@ export const Activity = () => {
 
   return (
     <>
-      <List
-        sx={{
-          width: "100%",
-          maxWidth: "40rem",
-          borderRadius: 1,
-          marginLeft: 3,
-        }}
-      >
-        {activities.map((activity, i) => {
-          return (
-            <Box key={i}>
-              <ListItem alignItems="flex-start">
-                <ListItemAvatar>
-                  <Avatar
-                    alt="author avatar"
-                    src={activity.author.avatar_url}
-                  />
-                </ListItemAvatar>
-                <ListItemText
-                  primary={activity.repository.name}
-                  secondary={
-                    <>
-                      <Typography
-                        sx={{ display: "inline" }}
-                        component="span"
-                        variant="body2"
-                        color="text.primary"
-                      >
-                        {activity.commit.message}
-                      </Typography>
-                      <br />
-                      <Typography
-                        sx={{ display: "inline" }}
-                        component="span"
-                        variant="body2"
-                        color="text.primary"
-                      >
-                        {activity.commit.author.date.slice(0, 10)}
-                      </Typography>
-                    </>
-                  }
-                />
-              </ListItem>
-              <Divider variant="inset" component="li" />
-            </Box>
-          );
-        })}
-      </List>
+      {activities.length === 0 ? (
+        <Box display={"flex"} justifyContent={"center"}>
+          <CircularProgress />
+        </Box>
+      ) : (
+        <Box marginLeft={{ md: 2 }}>
+          <List
+            sx={{
+              borderRadius: 1,
+            }}
+          >
+            {activities.map((activity, i) => {
+              return (
+                <Box key={i}>
+                  <ListItem alignItems="flex-start">
+                    <ListItemAvatar>
+                      <Avatar
+                        alt="author avatar"
+                        src={activity.author.avatar_url}
+                      />
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={activity.repository.name}
+                      secondary={
+                        <>
+                          <Typography
+                            sx={{ display: "inline" }}
+                            component="span"
+                            variant="body2"
+                            color="text.primary"
+                          >
+                            {activity.commit.message}
+                          </Typography>
+                          <br />
+                          <Typography
+                            sx={{ display: "inline" }}
+                            component="span"
+                            variant="body2"
+                            color="text.primary"
+                          >
+                            {activity.commit.author.date.slice(0, 10)}
+                          </Typography>
+                        </>
+                      }
+                    />
+                  </ListItem>
+                  <Divider variant="inset" component="li" />
+                </Box>
+              );
+            })}
+          </List>
+        </Box>
+      )}
     </>
   );
 };
