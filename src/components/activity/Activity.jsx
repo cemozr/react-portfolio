@@ -15,7 +15,7 @@ import {
 export const Activity = () => {
   const [activities, setActivities] = useState([]);
   const commitAmount = 13;
-  const token = "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";
+  const token = import.meta.env.VITE_GIT_TOKEN;
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
@@ -52,7 +52,6 @@ export const Activity = () => {
         .slice(0, commitAmount);
 
       setActivities(sortedActivities);
-      console.log(activities);
     } catch (error) {
       console.error("veri alınamadı", error);
     }
