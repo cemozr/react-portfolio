@@ -1,4 +1,4 @@
-import { Box, Typography, Stack, Chip } from "@mui/material";
+import { Box, Typography, Stack, Chip, Grid } from "@mui/material";
 import Masonry from "@mui/lab/Masonry";
 
 export const Skills = () => {
@@ -48,7 +48,7 @@ export const Skills = () => {
     {
       name: "Axios",
       imgsrc: "/ax.png",
-      width: "75%",
+      width: "50%",
     },
     {
       name: "Html",
@@ -72,29 +72,27 @@ export const Skills = () => {
 
   return (
     <>
-      <Box marginTop={3} display={"flex"} justifyContent={"center"}>
-        <Masonry columns={{ md: 6, xs: 3 }}>
-          {skills.map((skill, i) => {
-            return (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: 10,
-                }}
-                key={i}
-              >
-                <img
-                  loading="lazy"
-                  width={skill.width}
-                  src={skill.imgsrc}
-                  alt={skill.name}
-                />
-              </div>
-            );
-          })}
-        </Masonry>
-      </Box>
+      <Grid container spacing={4} marginTop={3}>
+        {skills.map((skill, i) => {
+          return (
+            <Grid
+              key={i}
+              item
+              md={2}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              <img
+                loading="lazy"
+                width={skill.width}
+                src={skill.imgsrc}
+                alt={skill.name}
+              />
+            </Grid>
+          );
+        })}
+      </Grid>
     </>
   );
 };

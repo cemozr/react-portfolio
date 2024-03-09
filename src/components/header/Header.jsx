@@ -4,7 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { CssBaseline, Menu, MenuItem } from "@mui/material";
+import { Button, CssBaseline, Menu, MenuItem } from "@mui/material";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "../../themes/theme";
@@ -13,6 +13,7 @@ import { useState } from "react";
 import {
   NavigationButtons,
   navButtons,
+  cvLinks,
 } from "./navigationButtons/NavigationButtons";
 import { Link } from "react-router-dom";
 
@@ -29,17 +30,21 @@ export const Header = () => {
           <AppBar position="static">
             <Toolbar>
               <TerminalIcon sx={{ mr: 1 }} />
+
               <Typography
                 variant="h6"
-                component="div"
+                component="a"
+                href="/"
                 sx={{
                   flexGrow: 1,
                   color: "secondary",
                   alignItems: "center",
+                  textDecoration: "none",
                 }}
               >
                 DevCem
               </Typography>
+
               <NavigationButtons />
               <IconButton
                 onClick={hamburgerClickHandler}
@@ -67,6 +72,19 @@ export const Header = () => {
                     horizontal: "right",
                   }}
                 >
+                  {cvLinks.map((cv, i) => {
+                    return (
+                      <Link
+                        key={i}
+                        className="nav-link"
+                        to={cv.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <MenuItem>{cv.name}</MenuItem>
+                      </Link>
+                    );
+                  })}
                   {navButtons.map((navButton, i) => {
                     return (
                       <Link key={i} className="nav-link" to={navButton.path}>
