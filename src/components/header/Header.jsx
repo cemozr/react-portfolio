@@ -27,7 +27,10 @@ export const Header = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static">
+          <AppBar
+            position="static"
+            sx={{ borderBottom: "2px solid", borderColor: "third.main" }}
+          >
             <Toolbar>
               <TerminalIcon sx={{ mr: 1 }} />
 

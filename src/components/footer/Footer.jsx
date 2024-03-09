@@ -21,9 +21,15 @@ export const Footer = () => {
         >
           <Button
             href="https://github.com/cemozr"
-            sx={{ color: "secondary.main" }}
+            sx={{ color: "secondary.main", borderColor: "black" }}
           >
-            <GitHubIcon fontSize="large" />
+            <GitHubIcon
+              fontSize="large"
+              sx={{
+                borderRadius: "50%",
+                "&:hover": { border: "2px solid green" },
+              }}
+            />
           </Button>
           <Button
             href="https://www.linkedin.com/in/cem-%C3%B6zer-645361230/"
@@ -31,7 +37,13 @@ export const Footer = () => {
               color: "secondary.main",
             }}
           >
-            <LinkedInIcon fontSize="large" />
+            <LinkedInIcon
+              fontSize="large"
+              sx={{
+                borderRadius: "25%",
+                "&:hover": { border: "2px solid green" },
+              }}
+            />
           </Button>
         </Box>
         <Typography

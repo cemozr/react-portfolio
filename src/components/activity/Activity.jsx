@@ -92,7 +92,7 @@ export const Activity = () => {
                             sx={{ display: "inline" }}
                             component="span"
                             variant="body2"
-                            color="text.primary"
+                            color="secondary.main"
                           >
                             {activity.commit.message}
                           </Typography>
@@ -101,7 +101,7 @@ export const Activity = () => {
                             sx={{ display: "inline" }}
                             component="span"
                             variant="body2"
-                            color="text.primary"
+                            color="secondary.main"
                           >
                             {activity.commit.author.date.slice(0, 10)}
                           </Typography>
@@ -109,7 +109,11 @@ export const Activity = () => {
                       }
                     />
                   </ListItem>
-                  <Divider variant="inset" component="li" />
+                  <Divider
+                    variant="middle"
+                    component="li"
+                    sx={{ borderColor: "third.main" }}
+                  />
                 </Box>
               );
             })}

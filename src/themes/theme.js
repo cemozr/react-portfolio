@@ -2,20 +2,12 @@ import { createTheme } from "@mui/material";
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#27374D",
+      main: "#0b0e0f",
     },
     secondary: { main: "#DDE6ED" },
+    third: { main: "#3ad305" },
   },
   components: {
-    MuiChip: {
-      styleOverrides: {
-        root: {
-          backgroundColor: "#27374D",
-          color: "#DDE6ED",
-          marginTop: "1rem",
-        },
-      },
-    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -26,7 +18,7 @@ export const theme = createTheme({
     MuiCardContent: {
       styleOverrides: {
         root: {
-          backgroundColor: " #3C4B5E",
+          backgroundColor: " #0b0e0f",
           color: "#DDE6ED",
         },
       },
@@ -34,7 +26,7 @@ export const theme = createTheme({
     MuiCardActions: {
       styleOverrides: {
         root: {
-          backgroundColor: "#27374D",
+          backgroundColor: "#3ad305",
         },
       },
     },
@@ -48,7 +40,7 @@ export const theme = createTheme({
     MuiList: {
       styleOverrides: {
         root: {
-          backgroundColor: "#27374D",
+          backgroundColor: "#0b0e0f",
         },
       },
     },

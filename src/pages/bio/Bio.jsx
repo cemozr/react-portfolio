@@ -6,7 +6,7 @@ export const Bio = () => {
   return (
     <>
       <CssBaseline />
-      <Container sx={{ mb: "7rem", backgroundColor: "#dde6ed" }}>
+      <Container sx={{ mb: "7rem", backgroundColor: "#24272c" }}>
         <BioPaper />
         <Skills />
       </Container>

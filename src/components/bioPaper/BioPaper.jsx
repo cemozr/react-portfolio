@@ -3,24 +3,13 @@ import { Paper, Typography, Box, Avatar } from "@mui/material";
 export const BioPaper = () => {
   return (
     <Box>
-      <Typography
-        variant="h5"
-        sx={{
-          mt: "2rem",
-          textAlign: "center",
-          fontWeight: "medium",
-          color: "primary.main",
-        }}
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing.
-      </Typography>
       <Paper
         sx={{
           display: { xs: "block", sm: "flex" },
           mt: "2rem",
           p: "2rem",
           backgroundColor: "primary.main",
-          boxShadow: "0px 0px 5px 1px #033171",
+          boxShadow: "2px 2px #3ad305",
         }}
         elevation={5}
       >

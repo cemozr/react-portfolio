@@ -6,6 +6,7 @@ import {
   Typography,
   Button,
   Box,
+  Divider,
 } from "@mui/material";
 import projectData from "../../data/projectData.json";
 export const ProjectList = () => {
@@ -33,11 +34,46 @@ export const ProjectList = () => {
               <Typography variant="body2">{project.description}</Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">İncele</Button>
-              <Button href={project.gitLink} size="small">
+              <Button
+                size="small"
+                sx={{
+                  backgroundColor: "#24272c",
+                  "&:hover": { backgroundColor: "primary.main" },
+                }}
+              >
+                İncele
+              </Button>
+              <Divider
+                orientation="vertical"
+                variant="fullwidth"
+                flexItem
+                sx={{ borderColor: "primary.main" }}
+              />
+              <Button
+                href={project.gitLink}
+                size="small"
+                sx={{
+                  backgroundColor: "#24272c",
+                  "&:hover": { backgroundColor: "primary.main" },
+                }}
+              >
                 Github
               </Button>
-              <Button size="small">Projeye Git</Button>
+              <Divider
+                orientation="vertical"
+                variant="fullwidth"
+                flexItem
+                sx={{ borderColor: "primary.main" }}
+              />
+              <Button
+                size="small"
+                sx={{
+                  backgroundColor: "#24272c",
+                  "&:hover": { backgroundColor: "primary.main" },
+                }}
+              >
+                Projeye Git
+              </Button>
             </CardActions>
           </Card>
         );

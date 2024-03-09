@@ -41,8 +41,12 @@ export const NavigationButtons = () => {
           >
             <Button
               sx={{
-                color: "secondary.main",
                 display: { xs: "none", sm: "block" },
+                transition: "ease 0.5s",
+                "&:hover": {
+                  boxShadow: "0px 2px 0px 0px #3ad305",
+                  top: "-3px",
+                },
               }}
             >
               {cv.name}
@@ -67,6 +71,11 @@ export const NavigationButtons = () => {
               sx={{
                 color: "secondary.main",
                 display: { xs: "none", sm: "block" },
+                transition: "ease 0.5s",
+                "&:hover": {
+                  boxShadow: "0px 2px 0px 0px #3ad305",
+                  top: "-3px",
+                },
               }}
             >
               {btn.name}
