@@ -46,6 +46,7 @@ export const Footer = () => {
             />
           </Button>
         </Box>
+
         <Typography
           color={"secondary.dark"}
           bgcolor={"primary.main"}

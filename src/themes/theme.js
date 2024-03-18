@@ -51,5 +51,23 @@ export const theme = createTheme({
         },
       },
     },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#DDE6ED",
+          width: "100%",
+          margin: 10,
+        },
+      },
+    },
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          fontWeight: "bolder",
+          fontSize: 15,
+          margin: 10,
+        },
+      },
+    },
   },
 });

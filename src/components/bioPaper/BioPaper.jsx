@@ -27,20 +27,21 @@ export const BioPaper = () => {
             sx={{ width: "10rem", height: "10rem" }}
           />
         </Box>
+
         <Box
           sx={{
-            display: "flex",
-            alignItems: "center",
+            display: "block",
           }}
         >
+          <Typography variant="h4">Merhaba👋 </Typography>
           <Typography sx={{ color: "secondary.main" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, dicta
-            a! Perspiciatis aperiam repellendus at id debitis quasi neque
-            doloremque a consequatur sapiente adipisci totam facilis, dolores
-            tenetur eligendi eaque ad labore minima reprehenderit est rerum
-            quidem! Consequatur voluptatem, fuga, delectus culpa hic beatae
-            facilis asperiores recusandae quae repellendus suscipit modi
-            voluptate optio laudantium amet! Sapiente unde deleniti dolor quas.
+            Ben Cem. Kütahya Dumlupınar Üniversitesi bilgisayar mühendisliği
+            bölümü mezunuyum. Üniversite yıllarımda oyun geliştirme, bilgi
+            güvenliği, veri tabanı tasarımı ve yönetimi, web geliştirme ve diğer
+            alanları denedim. Daha sonra ana teknoloji yığınım olarak Frontend
+            teknolojilerini seçtim. Çünkü kodlama yaparken ne yaptığınızı anında
+            görmek ve ilham verici kullanıcı arayüzleriyle insanları etkilemek
+            oldukça tatmin edici.
           </Typography>
         </Box>
       </Paper>

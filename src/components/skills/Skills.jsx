@@ -10,6 +10,12 @@ export const Skills = () => {
       width: "50%",
     },
     {
+      name: "JavaScript",
+      imgsrc:
+        "https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png",
+      width: "50%",
+    },
+    {
       name: "React.js",
       imgsrc:
         "https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png",
@@ -21,16 +27,10 @@ export const Skills = () => {
         "https://user-images.githubusercontent.com/25181517/189716630-fe6c084c-6c66-43af-aa49-64c8aea4a5c2.png",
       width: "50%",
     },
+    { name: "WebXR", imgsrc: "/webxr.png", width: "50%" },
     {
       name: "Three.js",
       imgsrc: "/three-js-icon.png",
-      width: "50%",
-    },
-    { name: "WebXR", imgsrc: "/webxr.png", width: "50%" },
-    {
-      name: "JavaScript",
-      imgsrc:
-        "https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png",
       width: "50%",
     },
     {
@@ -83,12 +83,25 @@ export const Skills = () => {
               justifyContent={"center"}
               alignItems={"center"}
             >
-              <img
-                loading="lazy"
-                width={skill.width}
-                src={skill.imgsrc}
-                alt={skill.name}
-              />
+              <Box
+                sx={{
+                  backgroundColor: "#0b0e0f",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: 2,
+                  borderBottom: "2px solid #3ad305",
+                  borderRadius: "8%",
+                  height: "100%",
+                }}
+              >
+                <img
+                  loading="lazy"
+                  width={skill.width}
+                  src={skill.imgsrc}
+                  alt={skill.name}
+                />
+              </Box>
             </Grid>
           );
         })}
