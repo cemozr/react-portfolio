@@ -1,7 +1,22 @@
 import { Box, Typography, Stack, Chip, Grid } from "@mui/material";
-import Masonry from "@mui/lab/Masonry";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./skills.css";
 export const Skills = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    arrows: false,
+    className: "slider-container",
+  };
+
   const skills = [
     {
       name: "TypeScript",
@@ -79,9 +94,9 @@ export const Skills = () => {
               key={i}
               item
               md={2}
-              display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
+              sx={{ display: { xs: "none", md: "flex" } }}
             >
               <Box
                 sx={{
@@ -106,6 +121,33 @@ export const Skills = () => {
           );
         })}
       </Grid>
+
+      <Box
+        marginTop={5}
+        sx={{
+          backgroundColor: "#0b0e0f",
+          paddingTop: 4,
+          paddingBottom: 4,
+          borderBottom: "2px solid #3ad305",
+          borderRadius: { xs: "2%", sm: "1%" },
+          display: { xs: "block", md: "none" },
+        }}
+      >
+        <Slider {...settings}>
+          {skills.map((skill, i) => {
+            return (
+              <Box key={i}>
+                <img
+                  loading="lazy"
+                  width="150px"
+                  src={skill.imgsrc}
+                  alt={skill.name}
+                />
+              </Box>
+            );
+          })}
+        </Slider>
+      </Box>
     </>
   );
 };

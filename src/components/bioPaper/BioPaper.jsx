@@ -33,15 +33,28 @@ export const BioPaper = () => {
             display: "block",
           }}
         >
-          <Typography variant="h4">Merhaba👋 </Typography>
-          <Typography sx={{ color: "secondary.main" }}>
+          <Typography
+            variant="h4"
+            sx={{ textAlign: { xs: "center", sm: "start" } }}
+          >
+            Merhaba👋{" "}
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: "secondary.main",
+              textAlign: { xs: "center", sm: "start" },
+            }}
+          >
             Ben Cem. Kütahya Dumlupınar Üniversitesi bilgisayar mühendisliği
             bölümü mezunuyum. Üniversite yıllarımda oyun geliştirme, bilgi
             güvenliği, veri tabanı tasarımı ve yönetimi, web geliştirme ve diğer
             alanları denedim. Daha sonra ana teknoloji yığınım olarak Frontend
             teknolojilerini seçtim. Çünkü kodlama yaparken ne yaptığınızı anında
             görmek ve ilham verici kullanıcı arayüzleriyle insanları etkilemek
-            oldukça tatmin edici.
+            oldukça tatmin edici. Bu site şimdilik benim için bir kum havuzu ve
+            bir hobi. Yakında buralarda bir blog görebilirsiniz. Belki de
+            göremezsiniz. 👀
           </Typography>
         </Box>
       </Paper>
