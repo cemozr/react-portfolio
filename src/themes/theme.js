@@ -60,12 +60,25 @@ export const theme = createTheme({
         },
       },
     },
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          width: "100%",
+        },
+      },
+    },
     MuiFormLabel: {
       styleOverrides: {
         root: {
           fontWeight: "bolder",
           fontSize: 15,
-          margin: 10,
+        },
+      },
+    },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          marginBottom: 10,
         },
       },
     },

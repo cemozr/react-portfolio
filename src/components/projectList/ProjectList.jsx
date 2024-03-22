@@ -19,8 +19,10 @@ export const ProjectList = () => {
   return (
     <Grid
       item
-      xs={0}
-      md={9}
+      xs={12}
+      sm={12}
+      md={12}
+      lg={12}
       rowGap={1}
       columnGap={1}
       sx={{
@@ -28,6 +30,7 @@ export const ProjectList = () => {
         alignItems: "center",
         justifyContent: "center",
         flexWrap: "wrap",
+        marginBottom: { xs: 2 },
       }}
     >
       {projectData.map((project, i) => {
@@ -45,7 +48,17 @@ export const ProjectList = () => {
                 >
                   {project.name}
                 </Typography>
-                <Box>
+                <Box
+                  sx={{
+                    display: {
+                      lg: "block",
+                      md: "block",
+                      sm: "block",
+                      xs: "flex",
+                      flexDirection: "column",
+                    },
+                  }}
+                >
                   <Button
                     href="https://github.com/cemozr"
                     sx={{ color: "secondary.main", borderColor: "black" }}
@@ -105,7 +118,15 @@ export const ProjectList = () => {
             />
 
             <CardActions sx={{ backgroundColor: "primary.main" }}>
-              <Stack direction={"row"} spacing={2} margin={1}>
+              <Stack
+                direction={"row"}
+                spacing={2}
+                margin={1}
+                sx={{
+                  display: { xs: "flex" },
+                  flexWrap: { xs: "wrap" },
+                }}
+              >
                 {project.usedSkills.map((usedSkill, i) => {
                   return (
                     <Chip
@@ -113,52 +134,11 @@ export const ProjectList = () => {
                       label={usedSkill}
                       variant="outlined"
                       color="secondary"
-
-                      // sx={{ color: "white" }}
+                      sx={{ marginBottom: 5 }}
                     />
                   );
                 })}
               </Stack>
-              {/* <Button
-                size="small"
-                sx={{
-                  backgroundColor: "#24272c",
-                  "&:hover": { backgroundColor: "primary.main" },
-                }}
-              >
-                İncele
-              </Button>
-              <Divider
-                orientation="vertical"
-                variant="fullwidth"
-                flexItem
-                sx={{ borderColor: "primary.main" }}
-              />
-              <Button
-                href={project.gitLink}
-                size="small"
-                sx={{
-                  backgroundColor: "#24272c",
-                  "&:hover": { backgroundColor: "primary.main" },
-                }}
-              >
-                Github
-              </Button>
-              <Divider
-                orientation="vertical"
-                variant="fullwidth"
-                flexItem
-                sx={{ borderColor: "primary.main" }}
-              />
-              <Button
-                size="small"
-                sx={{
-                  backgroundColor: "#24272c",
-                  "&:hover": { backgroundColor: "primary.main" },
-                }}
-              >
-                Projeye Git
-              </Button> */}
             </CardActions>
           </Card>
         );
