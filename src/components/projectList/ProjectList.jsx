@@ -55,8 +55,8 @@ export const ProjectList = () => {
                       md: "block",
                       sm: "block",
                       xs: "flex",
-                      flexDirection: "column",
                     },
+                    flexDirection: { xs: "column" },
                   }}
                 >
                   <Button
