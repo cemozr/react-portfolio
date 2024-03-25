@@ -10,6 +10,7 @@ import {
   Typography,
   Box,
   CircularProgress,
+  Skeleton,
 } from "@mui/material";
 
 export const Activity = () => {
@@ -65,7 +66,13 @@ export const Activity = () => {
     <>
       {activities.length === 0 ? (
         <Box display={"flex"} justifyContent={"center"}>
-          <CircularProgress />
+          {/* <CircularProgress /> */}
+          <Skeleton
+            variant="rounded"
+            width={"80%"}
+            height={"140vh"}
+            sx={{ bgcolor: "primary.main" }}
+          />
         </Box>
       ) : (
         <Box marginLeft={{ md: 2 }}>
