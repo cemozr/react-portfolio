@@ -1,4 +1,5 @@
 import axios from "axios";
+import profilePic from "../../assets/gitPic.png";
 import { useEffect, useState } from "react";
 import {
   List,
@@ -9,7 +10,6 @@ import {
   Avatar,
   Typography,
   Box,
-  CircularProgress,
   Skeleton,
 } from "@mui/material";
 
@@ -64,9 +64,8 @@ export const Activity = () => {
 
   return (
     <>
-      {activities.length === 0 ? (
+      {activities.length == 0 ? (
         <Box display={"flex"} justifyContent={"center"}>
-          {/* <CircularProgress /> */}
           <Skeleton
             variant="rounded"
             width={"80%"}
@@ -88,7 +87,11 @@ export const Activity = () => {
                     <ListItemAvatar>
                       <Avatar
                         alt="author avatar"
-                        src={activity.author.avatar_url}
+                        src={
+                          activity.author === null
+                            ? profilePic
+                            : activity.author.avatar_url
+                        }
                       />
                     </ListItemAvatar>
                     <ListItemText

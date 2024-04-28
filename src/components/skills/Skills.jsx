@@ -1,4 +1,4 @@
-import { Box, Typography, Stack, Chip, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -42,10 +42,10 @@ export const Skills = () => {
         "https://user-images.githubusercontent.com/25181517/189716630-fe6c084c-6c66-43af-aa49-64c8aea4a5c2.png",
       width: "50%",
     },
-    { name: "WebXR", imgsrc: "/webxr.png", width: "50%" },
+    { name: "WebXR", imgsrc: "src/assets/webxr.png", width: "50%" },
     {
       name: "Three.js",
-      imgsrc: "/three-js-icon.png",
+      imgsrc: "src/assets/three-js-icon.png",
       width: "50%",
     },
     {
@@ -62,7 +62,7 @@ export const Skills = () => {
     },
     {
       name: "Axios",
-      imgsrc: "/ax.png",
+      imgsrc: "src/assets/ax.png",
       width: "50%",
     },
     {
