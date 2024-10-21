@@ -23,7 +23,7 @@ export const BioPaper = () => {
         >
           <Avatar
             alt="asdasd"
-            src="src/assets/asdasd.jpg"
+            src=""
             sx={{ width: "10rem", height: "10rem" }}
           />
         </Box>
