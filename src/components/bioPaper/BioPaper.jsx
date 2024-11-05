@@ -1,5 +1,5 @@
 import { Paper, Typography, Box, Avatar } from "@mui/material";
-
+import profileImg from "../../assets/profile.jpg";
 export const BioPaper = () => {
   return (
     <Box>
@@ -23,8 +23,8 @@ export const BioPaper = () => {
         >
           <Avatar
             alt="asdasd"
-            src=""
-            sx={{ width: "10rem", height: "10rem" }}
+            src={profileImg}
+            sx={{ width: "7.8rem", height: "auto" }}
           />
         </Box>
 

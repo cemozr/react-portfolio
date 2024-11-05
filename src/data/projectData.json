@@ -1,15 +1,15 @@
 [
   {
-    "name": "Artirilmis Gerçeklik Web Uygulaması",
-    "description": "Kullanıcıların sadece akıllı telefonlarını kullanarak, bir firmanın ürünlerini gerçek ortamda 3 boyutlu inceleyebilecekleri web sitesi. Üçüncü parti uygulamalara gerek yoktur.",
-    "gitLink": "https://github.com/cemozr/Augmented-reality-web-project",
-    "appLink": "/",
+    "name": "Blackjack Kart Oyunu",
+    "description": "Tarayıcıda çalışan klasik kart oyunu blackjack. Kazanma ihtimaline göre otonom kararlar verebilen krupiye, bahis, oyun içi bakiye hesaplaması, bekleme, kart çekme gibi mekanikler içermektedir.",
+    "gitLink": "https://github.com/cemozr/react-blackjack",
+    "appLink": "https://react-blackjack-xi.vercel.app/",
     "imageSrc": "",
     "usedSkills": [
-      "WebXR",
-      "Three.js",
-      "Javascript",
-      "Bootstrap",
+      "Typescript",
+      "React",
+      "Redux Toolkit",
+      "Axios",
       "Scss",
       "Html"
     ]
@@ -18,7 +18,7 @@
     "name": "Quiz Uygulaması",
     "description": "Oyuncuların belirli bir süre içinde soruları cevaplaması veya atlaması gereken bir sınav uygulaması. On sorudan sonra uygulama oyuncunun puanını hesaplar ve gösterir. Tüm sorular Trivia Api tarafından sağlanmaktadır, böylece her sınav yeni sorular içerir.",
     "gitLink": "https://github.com/cemozr/react-quiz-app",
-    "appLink": "",
+    "appLink": "https://react-quiz-app-hazel-seven.vercel.app/",
     "imageSrc": "",
     "usedSkills": ["React", "Fetch Api", "Javascript", "Css", "Html"]
   },
@@ -26,7 +26,7 @@
     "name": "Wordle Klonu (Türkçe ve İngilizce)",
     "description": "Wordle oyununun bir kopyası. Orijinal oyunun tüm mekaniklerini içerir. Bu oyunun iki versiyonunu geliştirdim. İngilizce versiyonu orijinal oyun gibi geliştirildi ve Türkçe versiyonuna zorluk seviyesini seçme seçeneği gibi ekstra mekanikler ekledim.",
     "gitLink": "https://github.com/cemozr/wordle-clone-turkish",
-    "appLink": "",
+    "appLink": "https://wordle-clone-turkish.vercel.app/",
     "imageSrc": "",
     "usedSkills": ["Javascript", "Html", "Css"]
   },
@@ -42,7 +42,7 @@
     "name": "Hesap Makinesi Uygulaması",
     "description": "Temel aritmetik işlemleri içeren basit bir hesap makinesi. Tüm akıllı cihazlarda çalışacak şekilde responsive tasarıma sahiptir.",
     "gitLink": "https://github.com/cemozr/react-calculator",
-    "appLink": "",
+    "appLink": "https://react-calculator-blond-rho.vercel.app/",
     "imageSrc": "",
     "usedSkills": ["React", "Context Api", "Javascript", "Css", "Html"]
   },
@@ -73,8 +73,8 @@
   {
     "name": "Fotoğraf Üretici",
     "description": "Bu uygulama, kullanıcı tarafından sağlanan ilgili anahtar kelimeler aracılığıyla Unsplash Api'den görseller döndürür.",
-    "gitLink": "https://github.com/cemozr/weather-app",
-    "appLink": "",
+    "gitLink": "https://github.com/cemozr/Photo-Generator-React",
+    "appLink": "https://photo-generator-react.vercel.app/",
     "imageSrc": "",
     "usedSkills": [" React", "Axios", "Javascript", "Css", "Html"]
   }

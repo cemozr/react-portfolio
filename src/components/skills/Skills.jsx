@@ -3,6 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./skills.css";
+import threePng from "../../assets/three-js-icon.png";
+import webXrPng from "../../assets/webxr.png";
+import axiosPng from "../../assets/ax.png";
 export const Skills = () => {
   const settings = {
     dots: false,
@@ -42,10 +45,10 @@ export const Skills = () => {
         "https://user-images.githubusercontent.com/25181517/189716630-fe6c084c-6c66-43af-aa49-64c8aea4a5c2.png",
       width: "50%",
     },
-    { name: "WebXR", imgsrc: "src/assets/webxr.png", width: "50%" },
+    { name: "WebXR", imgsrc: webXrPng, width: "50%" },
     {
       name: "Three.js",
-      imgsrc: "src/assets/three-js-icon.png",
+      imgsrc: threePng,
       width: "50%",
     },
     {
@@ -62,7 +65,7 @@ export const Skills = () => {
     },
     {
       name: "Axios",
-      imgsrc: "src/assets/ax.png",
+      imgsrc: axiosPng,
       width: "50%",
     },
     {
