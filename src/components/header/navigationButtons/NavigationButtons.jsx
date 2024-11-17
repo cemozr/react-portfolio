@@ -20,11 +20,11 @@ export const navButtons = [
 export const cvLinks = [
   {
     name: "CV EN",
-    path: "https://drive.google.com/file/d/1inAISwRFclAi2pHoM2v7lVlQVe9JP5Ek/view?usp=sharing",
+    path: "https://drive.google.com/file/d/1b8P16uomoqcRIwQPZzs7-RxJ2C05FGEI/view?usp=sharing",
   },
   {
     name: "CV TR",
-    path: "https://drive.google.com/file/d/19cz1Dzrss3XjqyHXFs307gSMZoedR7-I/view?usp=sharing",
+    path: "https://drive.google.com/file/d/1NjPOJiQZcaabHnLLtw-A-zP9cr_LXvUe/view?usp=sharing",
   },
 ];
 export const NavigationButtons = () => {
