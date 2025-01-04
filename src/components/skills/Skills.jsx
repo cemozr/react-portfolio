@@ -1,12 +1,12 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Skeleton } from "@mui/material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./skills.css";
-import threePng from "../../assets/three-js-icon.png";
-import webXrPng from "../../assets/webxr.png";
-import axiosPng from "../../assets/ax.png";
+import { useEffect, useState } from "react";
+import { fetchData } from "../../actions/fetchData";
 export const Skills = () => {
+  const [skills, setSkills] = useState([]);
   const settings = {
     dots: false,
     infinite: true,
@@ -20,77 +20,16 @@ export const Skills = () => {
     className: "slider-container",
   };
 
-  const skills = [
-    {
-      name: "TypeScript",
-      imgsrc:
-        "https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png",
-      width: "50%",
-    },
-    {
-      name: "JavaScript",
-      imgsrc:
-        "https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png",
-      width: "50%",
-    },
-    {
-      name: "React.js",
-      imgsrc:
-        "https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png",
-      width: "50%",
-    },
-    {
-      name: "Material Ui",
-      imgsrc:
-        "https://user-images.githubusercontent.com/25181517/189716630-fe6c084c-6c66-43af-aa49-64c8aea4a5c2.png",
-      width: "50%",
-    },
-    { name: "WebXR", imgsrc: webXrPng, width: "50%" },
-    {
-      name: "Three.js",
-      imgsrc: threePng,
-      width: "50%",
-    },
-    {
-      name: "Scss",
-      imgsrc:
-        "https://user-images.githubusercontent.com/25181517/192158956-48192682-23d5-4bfc-9dfb-6511ade346bc.png",
-      width: "50%",
-    },
-    {
-      name: "Bootstrap",
-      imgsrc:
-        "https://user-images.githubusercontent.com/25181517/183898054-b3d693d4-dafb-4808-a509-bab54cf5de34.png",
-      width: "50%",
-    },
-    {
-      name: "Axios",
-      imgsrc: axiosPng,
-      width: "50%",
-    },
-    {
-      name: "Html",
-      imgsrc:
-        "https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png",
-      width: "50%",
-    },
-    {
-      name: "Css",
-      imgsrc:
-        "https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png",
-      width: "50%",
-    },
-    {
-      name: "SQL",
-      imgsrc:
-        "https://github.com/marwin1991/profile-technology-icons/assets/19180175/3b371807-db7c-45b4-8720-c0cfc901680a",
-      width: "50%",
-    },
-  ];
-
+  useEffect(() => {
+    const getData = async () => {
+      const data = await fetchData("skills");
+      setSkills(data);
+    };
+    getData();
+  }, []);
   return (
     <>
-      <Grid container spacing={4} marginTop={3}>
+      <Grid container spacing={3} marginTop={3}>
         {skills.map((skill, i) => {
           return (
             <Grid
@@ -101,25 +40,29 @@ export const Skills = () => {
               alignItems={"center"}
               sx={{ display: { xs: "none", md: "flex" } }}
             >
-              <Box
-                sx={{
-                  backgroundColor: "#0b0e0f",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: 2,
-                  borderBottom: "2px solid #3ad305",
-                  borderRadius: "8%",
-                  height: "100%",
-                }}
-              >
-                <img
-                  loading="lazy"
-                  width={skill.width}
-                  src={skill.imgsrc}
-                  alt={skill.name}
-                />
-              </Box>
+              {skills ? (
+                <Box
+                  sx={{
+                    backgroundColor: "#0b0e0f",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: 2,
+                    borderBottom: "2px solid #3ad305",
+                    borderRadius: "8%",
+                    height: "100%",
+                  }}
+                >
+                  <img
+                    loading="lazy"
+                    width="50rem"
+                    src={skill.imgsrc}
+                    alt={skill.name}
+                  />
+                </Box>
+              ) : (
+                <Skeleton variant="rounded" width={80} height={80} />
+              )}
             </Grid>
           );
         })}

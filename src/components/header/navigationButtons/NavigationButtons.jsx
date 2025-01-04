@@ -1,6 +1,8 @@
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { Divider } from "@mui/material";
+import { useState, useEffect } from "react";
+import { fetchData } from "../../../actions/fetchData";
 import "../header.css";
 
 export const navButtons = [
@@ -17,43 +19,62 @@ export const navButtons = [
     path: "/contact",
   },
 ];
-export const cvLinks = [
-  {
-    name: "CV EN",
-    path: "https://drive.google.com/file/d/1b8P16uomoqcRIwQPZzs7-RxJ2C05FGEI/view?usp=sharing",
-  },
-  {
-    name: "CV TR",
-    path: "https://drive.google.com/file/d/1NjPOJiQZcaabHnLLtw-A-zP9cr_LXvUe/view?usp=sharing",
-  },
-];
+
 export const NavigationButtons = () => {
+  const [cv, setCv] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const data = await fetchData("cvs");
+        setCv(data);
+      } catch (err) {
+        console.error("Data couldn't fetch", err);
+      }
+    };
+    getData();
+  }, []);
+
   return (
     <>
-      {cvLinks.map((cv, i) => {
-        return (
-          <Link
-            key={i}
-            className="nav-link"
-            to={cv.path}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button
-              sx={{
-                display: { xs: "none", sm: "block" },
-                transition: "ease 0.5s",
-                "&:hover": {
-                  boxShadow: "0px 2px 0px 0px #3ad305",
-                  top: "-3px",
-                },
-              }}
-            >
-              {cv.name}
-            </Button>
-          </Link>
-        );
-      })}
+      <Link
+        className="nav-link"
+        to={cv[0]?.English}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button
+          sx={{
+            display: { xs: "none", sm: "block" },
+            transition: "ease 0.5s",
+            "&:hover": {
+              boxShadow: "0px 2px 0px 0px #3ad305",
+              top: "-3px",
+            },
+          }}
+        >
+          CV EN
+        </Button>
+      </Link>
+      <Link
+        className="nav-link"
+        to={cv[0]?.Turkish}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button
+          sx={{
+            display: { xs: "none", sm: "block" },
+            transition: "ease 0.5s",
+            "&:hover": {
+              boxShadow: "0px 2px 0px 0px #3ad305",
+              top: "-3px",
+            },
+          }}
+        >
+          CV TR
+        </Button>
+      </Link>
+
       <Divider
         orientation="vertical"
         variant="middle"

@@ -7,7 +7,11 @@ export const Bio = () => {
     <>
       <CssBaseline />
       <Container
-        sx={{ mb: { md: "7rem", xs: "2rem" }, backgroundColor: "#24272c" }}
+        sx={{
+          mb: { md: "7rem", xs: "2rem" },
+
+          backgroundColor: "#24272c",
+        }}
       >
         <BioPaper />
         <Skills />

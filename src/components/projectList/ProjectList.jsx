@@ -10,12 +10,23 @@ import {
   SvgIcon,
   Stack,
   Chip,
+  Skeleton,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-import projectData from "../../data/projectData.json";
+import { useEffect, useState } from "react";
+import { fetchData } from "../../actions/fetchData";
 
 export const ProjectList = () => {
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const data = await fetchData("projects");
+      setProjects(data);
+    };
+    getData();
+  }, []);
+
   return (
     <Grid
       item
@@ -33,9 +44,9 @@ export const ProjectList = () => {
         marginBottom: { xs: 2 },
       }}
     >
-      {projectData.map((project, i) => {
-        return (
-          <Card key={i} sx={{ width: "100%" }}>
+      {projects.map((project) => {
+        return projects ? (
+          <Card key={project.id} sx={{ width: "100%" }}>
             <CardContent>
               <Box display={"flex"} justifyContent={"space-between"}>
                 <Typography
@@ -60,7 +71,7 @@ export const ProjectList = () => {
                   }}
                 >
                   <Button
-                    href="https://github.com/cemozr"
+                    href={project.gitLink}
                     sx={{ color: "secondary.main", borderColor: "black" }}
                   >
                     <GitHubIcon
@@ -72,7 +83,7 @@ export const ProjectList = () => {
                     />
                   </Button>
                   <Button
-                    href="https://github.com/cemozr"
+                    href={project.appLink}
                     sx={{
                       color: "secondary.main",
                       borderColor: "black",
@@ -141,6 +152,8 @@ export const ProjectList = () => {
               </Stack>
             </CardActions>
           </Card>
+        ) : (
+          <Skeleton variant="rounded" width={"100%"} height={200} />
         );
       })}
     </Grid>

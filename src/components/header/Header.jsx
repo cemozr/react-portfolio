@@ -4,24 +4,37 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Button, CssBaseline, Menu, MenuItem } from "@mui/material";
+import { CssBaseline, Menu, MenuItem } from "@mui/material";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "../../themes/theme";
 import "./header.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   NavigationButtons,
   navButtons,
-  cvLinks,
 } from "./navigationButtons/NavigationButtons";
 import { Link } from "react-router-dom";
+import { fetchData } from "../../actions/fetchData";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [cv, setCv] = useState([]);
   const hamburgerClickHandler = () => {
     setIsOpen(true);
   };
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const data = await fetchData("cvs");
+        setCv(data);
+      } catch (err) {
+        console.error("Data couldn't fetch", err);
+      }
+    };
+    getData();
+  }, []);
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -75,19 +88,23 @@ export const Header = () => {
                     horizontal: "right",
                   }}
                 >
-                  {cvLinks.map((cv, i) => {
-                    return (
-                      <Link
-                        key={i}
-                        className="nav-link"
-                        to={cv.path}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <MenuItem>{cv.name}</MenuItem>
-                      </Link>
-                    );
-                  })}
+                  <Link
+                    className="nav-link"
+                    to={cv[0]?.English}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MenuItem>CV EN</MenuItem>
+                  </Link>
+                  <Link
+                    className="nav-link"
+                    to={cv[0]?.Turkish}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MenuItem>CV TR</MenuItem>
+                  </Link>
+
                   {navButtons.map((navButton, i) => {
                     return (
                       <Link key={i} className="nav-link" to={navButton.path}>
