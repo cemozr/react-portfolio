@@ -29,7 +29,7 @@ export const Skills = () => {
   }, []);
   return (
     <>
-      <Grid container spacing={3} marginTop={3}>
+      <Grid container spacing={4} marginTop={3}>
         {skills.map((skill, i) => {
           return (
             <Grid
