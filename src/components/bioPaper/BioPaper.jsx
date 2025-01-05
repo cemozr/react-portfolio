@@ -18,7 +18,7 @@ export const BioPaper = () => {
 
   return (
     <Box>
-      {bioData ? (
+      {bioData[0]?.about ? (
         <Paper
           sx={{
             display: { xs: "block", sm: "flex" },

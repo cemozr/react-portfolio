@@ -29,18 +29,18 @@ export const Skills = () => {
   }, []);
   return (
     <>
-      <Grid container spacing={4} marginTop={3}>
-        {skills.map((skill, i) => {
-          return (
-            <Grid
-              key={i}
-              item
-              md={2}
-              justifyContent={"center"}
-              alignItems={"center"}
-              sx={{ display: { xs: "none", md: "flex" } }}
-            >
-              {skills ? (
+      {skills[0]?.imgsrc ? (
+        <Grid container spacing={4} marginTop={3}>
+          {skills.map((skill, i) => {
+            return (
+              <Grid
+                key={i}
+                item
+                md={2}
+                justifyContent={"center"}
+                alignItems={"center"}
+                sx={{ display: { xs: "none", md: "flex" } }}
+              >
                 <Box
                   sx={{
                     backgroundColor: "#0b0e0f",
@@ -60,13 +60,18 @@ export const Skills = () => {
                     alt={skill.name}
                   />
                 </Box>
-              ) : (
-                <Skeleton variant="rounded" width={80} height={80} />
-              )}
-            </Grid>
-          );
-        })}
-      </Grid>
+              </Grid>
+            );
+          })}
+        </Grid>
+      ) : (
+        <Skeleton
+          variant="rounded"
+          width={"100%"}
+          height={200}
+          sx={{ marginTop: 5 }}
+        />
+      )}
 
       <Box
         marginTop={5}

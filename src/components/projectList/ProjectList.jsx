@@ -19,14 +19,37 @@ import { fetchData } from "../../actions/fetchData";
 
 export const ProjectList = () => {
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getData = async () => {
       const data = await fetchData("projects");
       setProjects(data);
+      setLoading(false);
     };
     getData();
   }, []);
-
+  if (loading) {
+    return (
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        rowGap={1}
+        columnGap={1}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          marginBottom: { xs: 2 },
+        }}
+      >
+        <Skeleton variant="rounded" width={"100%"} height={"100vh"} />
+      </Grid>
+    );
+  }
   return (
     <Grid
       item
@@ -45,7 +68,7 @@ export const ProjectList = () => {
       }}
     >
       {projects.map((project) => {
-        return projects ? (
+        return project ? (
           <Card key={project.id} sx={{ width: "100%" }}>
             <CardContent>
               <Box display={"flex"} justifyContent={"space-between"}>
