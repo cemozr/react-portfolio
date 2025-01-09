@@ -1,13 +1,13 @@
 import { Paper, Typography, Box, Avatar, Skeleton } from "@mui/material";
 import profileImg from "../../assets/profile.jpg";
 import { useEffect, useState } from "react";
-import { fetchDataWithImage } from "../../actions/fetchData";
+import { handleData } from "../../actions/fetchData";
 export const BioPaper = () => {
   const [bioData, setBioData] = useState([]);
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await fetchDataWithImage("abouts");
+        const data = await handleData("about");
         setBioData(data);
       } catch (error) {
         console.error("Data couldn't fetch", error);

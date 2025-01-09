@@ -15,7 +15,7 @@ import {
   navButtons,
 } from "./navigationButtons/NavigationButtons";
 import { Link } from "react-router-dom";
-import { fetchData } from "../../actions/fetchData";
+import { handleData } from "../../actions/fetchData";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,7 @@ export const Header = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await fetchData("cvs");
+        const data = await handleData("cv");
         setCv(data);
       } catch (err) {
         console.error("Data couldn't fetch", err);

@@ -15,14 +15,14 @@ import {
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 import { useEffect, useState } from "react";
-import { fetchData } from "../../actions/fetchData";
+import { handleData } from "../../actions/fetchData";
 
 export const ProjectList = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const getData = async () => {
-      const data = await fetchData("projects");
+      const data = await handleData("project");
       setProjects(data);
       setLoading(false);
     };
