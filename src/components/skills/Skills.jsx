@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./skills.css";
 import { useEffect, useState } from "react";
-import { fetchData } from "../../actions/fetchData";
+import { handleData } from "../../actions/fetchData";
 export const Skills = () => {
   const [skills, setSkills] = useState([]);
   const settings = {
@@ -22,7 +22,7 @@ export const Skills = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const data = await fetchData("skills");
+      const data = await handleData("skill");
       setSkills(data);
     };
     getData();
@@ -31,10 +31,10 @@ export const Skills = () => {
     <>
       {skills[0]?.imgsrc ? (
         <Grid container spacing={4} marginTop={3}>
-          {skills.map((skill, i) => {
+          {skills.map((skill) => {
             return (
               <Grid
-                key={i}
+                key={skill.id}
                 item
                 md={2}
                 justifyContent={"center"}

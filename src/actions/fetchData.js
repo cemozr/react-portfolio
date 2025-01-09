@@ -1,23 +1,15 @@
-import axios from "axios";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../config/firebase";
 
-export const BASE_URL = import.meta.env.VITE_BASE_URL;
-
-export const fetchData = async (collection) => {
+export const handleData = async (col) => {
   try {
-    const response = await axios.get(`${BASE_URL}/api/${collection}`);
-    return await response.data.data;
+    const querySnapshot = await getDocs(collection(db, col));
+    const data = [];
+    querySnapshot.forEach((doc) => {
+      data.push({ id: doc.id, ...doc.data() });
+    });
+    return data;
   } catch (error) {
-    console.error("Data fetching failed.", error);
-  }
-};
-
-export const fetchDataWithImage = async (collection) => {
-  try {
-    const response = await axios.get(
-      `${BASE_URL}/api/${collection}?populate=*`
-    );
-    return response.data.data;
-  } catch (error) {
-    console.error("Data fetching failed.", error);
+    console.error("data fetching failed", error);
   }
 };

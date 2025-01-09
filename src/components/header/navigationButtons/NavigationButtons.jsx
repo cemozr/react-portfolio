@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { Divider } from "@mui/material";
 import { useState, useEffect } from "react";
-import { fetchData } from "../../../actions/fetchData";
+import { handleData } from "../../../actions/fetchData";
 import "../header.css";
 
 export const navButtons = [
@@ -25,7 +25,7 @@ export const NavigationButtons = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await fetchData("cvs");
+        const data = await handleData("cv");
         setCv(data);
       } catch (err) {
         console.error("Data couldn't fetch", err);
